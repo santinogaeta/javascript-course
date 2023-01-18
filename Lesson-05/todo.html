@@ -1,0 +1,36 @@
+<!--document.createElement('[type of element]') - tells computer to create an element of type [~] -->
+<!--[element].innerText = [variable] - tells computer to put the value of [variable] into the [element]-->
+<!--document.body.appendChild([element]) - instruction to add 'Child' / [element] to end of the body of the document-->
+<!--Can reassign element variables to create more elements in the document's body-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Google Tasks Clone</title>
+  </head>
+  <body>
+
+    <button>Press me</button>
+
+    <script>
+
+      let todo1 = 'Get groceries';
+      let todo2 = 'Wash car';
+      let todo3 = 'Make dinner' + ' for me';
+
+      let element = document.createElement('div');
+      element.innerText = todo1;
+      document.body.appendChild(element);
+
+      element = document.createElement('div');
+      element.innerText = todo2;
+      document.body.appendChild(element);
+
+      element = document.createElement('div');
+      element.innerText = todo3;
+      document.body.appendChild(element);
+
+    </script>
+  </body>
+</html>
