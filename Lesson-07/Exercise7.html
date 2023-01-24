@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Exercise 7</title>
+  </head>
+  <body>
+    <script>
+
+      function toUpper (array) {
+        let newArray = [];
+        array.forEach( function (str) {
+          newArray.push(str.toUpperCase())
+        })
+        console.log(newArray);
+      }
+
+      let array = ['Hello', 'WorLd', 'alL UppeR'];
+      toUpper(array);
+
+
+      function arrayDouble (array) {
+        let newArray = [];
+        array.forEach( function (str) {
+          newArray.push(str);
+          newArray.push(str);
+        })
+        console.log(newArray);
+      }
+
+      let soundArray = ['oink', 'meow', 'woof'];
+      arrayDouble(soundArray);
+
+
+      function arraySum (array) {
+        let sum = 0;
+        array.forEach( function (num) {
+          sum = num + sum;
+        })
+        console.log(sum);
+      }
+
+      let numArray = [2, 5, 8];
+      arraySum(numArray);
+      
+    </script>
+  </body>
+</html>
