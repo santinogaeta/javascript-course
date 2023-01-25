@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Exercise8</title>
+  </head>
+  <body>
+
+    <button id="todo-button" onclick="changeText();">Click Me</button>
+
+    <div>
+      <div id="counter" 
+        style="display: inline-block"> 0 </div>
+      <button onclick="increaseCount()">Up</button>
+      <button onclick="decreaseCount()">Down</button>
+    </div>
+
+    <input id="textbox" type="text" />
+    <button onclick="addDiv()">Add Text</button>
+
+    <script>
+
+      let count = 0;
+      let counterDiv = document.getElementById('counter');
+      let inputBox = document.getElementById('textbox');
+
+      function changeText() {
+        let title = document.getElementById('todo-button');
+        title.innerText = 'Done';
+      }
+
+      function increaseCount() {
+        count = count + 1;
+        counterDiv.innerText = count;
+      }
+
+      function decreaseCount() {
+        count = count - 1;
+        counterDiv.innerText = count;
+      }
+
+      function addDiv() {
+        let text = inputBox.value;
+        let element = document.createElement('div');
+        element.innerText = text;
+        document.body.appendChild(element);
+      }
+
+    </script>
+  </body>
+</html>

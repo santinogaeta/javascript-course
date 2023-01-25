@@ -1,0 +1,39 @@
+<!--Adding Attribute to button to add new element to array once button is clicked
+      disabled="true" - disables the button and cannot be clicked
+  <input> attribute: type="text" - to make textbox
+                      type="checkbox" - to make a tickbox-->
+<!--id-attribute: Allows text inputted in the textbox to be identified and used by our javascript 
+        by using document.getElementById([id of where information is being entered from])-->
+<!--HTML shorthand if no value inside an element: <input type="text" /> -->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lesson8</title>
+  </head>
+  <body>
+    <input id="todo-title" type="text" />
+    <button onclick="addTodoButton();">Add Todo</button>
+
+    <script>
+
+      let todos = ['Get groceries', 'Wash car', 'Make dinner'];
+      todos.push('another todo');
+
+      todos.forEach( function (todoTitle) {
+        let element = document.createElement('div');
+        element.innerText = todoTitle;
+        document.body.appendChild(element);
+      })
+
+      function addTodoButton() {
+        let textbox = document.getElementById('todo-title');
+        let title = textbox.value;
+        todos.push(title);
+      }
+
+    </script>
+    
+  </body>
+</html>
