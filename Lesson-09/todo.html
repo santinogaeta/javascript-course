@@ -1,0 +1,47 @@
+<!--Variable Syntax
+      let - to define variables that can be reassigned and used again
+      const - defining a variable to stay constant and not be reassigned
+      var - old way of defining variables in old javascript, not used as much anymore-->
+<!-- Added a render() function to refresh the screen once more todos have been added
+      by clearing the <div> containing the todo-list, and rewritting it including the new entry-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lesson8</title>
+  </head>
+  <body>
+    <input id="todo-title" type="text" />
+    <button onclick="addTodoButton();">Add Todo</button>
+
+    <div id="todo-list"></div>
+
+    <script>
+
+      const todos = ['Get groceries', 'Wash car', 'Make dinner'];
+
+      render();
+      
+      function addTodoButton() {
+        const textbox = document.getElementById('todo-title');
+        const title = textbox.value;
+        todos.push(title);
+
+        render();
+      }
+
+      function render() {
+        document.getElementById('todo-list').innerHTML = '';
+        todos.forEach( function (todoTitle) {
+        const element = document.createElement('div');
+        element.innerText = todoTitle;
+        const todoList = document.getElementById('todo-list');
+        todoList.appendChild(element);
+      })
+      }
+
+    </script>
+    
+  </body>
+</html>

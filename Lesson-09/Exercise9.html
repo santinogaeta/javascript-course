@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Exercise9</title>
+  </head>
+  <body>
+
+    <!--Exercise9a-->
+    <button onclick="addApple()">Apple</button>
+    <button onclick="addTomato()">Tomato</button>
+    <button onclick="addEggs()">Eggs</button>
+    <button onclick="clearCart()">Clear</button>
+    <div style="text-decoration: underline">Shopping Cart</div>
+    <div id="cart" style="margin-bottom: 40px"></div>
+  
+    <!--Exercise9b-->
+    <input id="value" type="text" />
+    <button onclick="convertToCm()">Convert to cm</button>
+    <button onclick="convertToInch()">Convert to inch</button>
+    <div id="result" style="margin-left: 2px"></div>
+
+    <script>
+
+      //Exercise9a
+      let groceries = [];
+      const shoppingCart = document.getElementById('cart');
+      render();
+
+      function render() {
+        shoppingCart.innerHTML = '';
+        groceries.forEach( function (item) {
+          const element = document.createElement('div');
+          element.innerText = item;
+          shoppingCart.appendChild(element);
+        })
+      }
+
+      function addApple() {
+        groceries.push("Apple");
+        render();
+      }
+
+      function addTomato() {
+        groceries.push("Tomato");
+        render();
+      }
+
+      function addEggs() {
+        groceries.push("Eggs");
+        render();
+      }
+
+      function clearCart() {
+        groceries = [];
+        render();
+      }
+
+      //Exercise9b
+
+      const newValue = document.getElementById('result')
+      const numString = document.getElementById('value');
+
+      function convertToCm() {
+        const measurement = numString.value;
+        const num = +measurement*2.54;
+        newValue.innerText = num + ' cm';
+      }
+
+      function convertToInch() {
+        const measurement = numString.value;
+        const num = +measurement/2.54;
+        newValue.innerText = num + ' in';
+      }
+
+    </script>
+
+  </body>
+</html>
