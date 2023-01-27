@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Exercise 10</title>
+  </head>
+  <body>
+
+    <!-- Exercise10-2-->
+    <div style="text-decoration: underline">Item Receipt</div>
+    <div id="receipt"></div>
+
+    <script>
+
+      //Exercise 10-1
+      const cartArray = [{
+        name: 'Apple', price: 4, quantity: 2
+        }, {
+        name: 'Orange', price: 3, quantity: 3
+        }, {
+        name: 'Pear', price: 5, quantity: 4
+        }, {
+        name: 'Watermelon', price: 10, quantity: 1
+        }, {
+        name: 'Banana', price: 3, quantity: 6
+        }
+      ];
+
+      cartTotal(cartArray);
+      
+      function cartTotal(cartArray) {
+        let total = 0;
+        cartArray.forEach(function (item){
+          total = total + (item.price * item.quantity);
+        })
+        console.log(total);
+      }
+
+      //Exercise 10-2
+      const receipt = document.getElementById('receipt');
+      displayReceipt(cartArray); 
+
+      function displayReceipt(cartArray) {
+        let total = 0;
+        receipt.innerHTML = '';
+        cartArray.forEach(function (item) {
+          const element = document.createElement('div');
+          const itemTotal = item.price * item.quantity;
+          total = total + itemTotal;
+          const itemInfo = item.name + ' $' + item.price + ' * ' + item.quantity + ' = $' + itemTotal;
+          element.innerText = itemInfo;
+          receipt.appendChild(element);
+        })
+        const totalDiv = document.createElement('div');
+        totalDiv.innerText = "Cart total = $"+total;
+        receipt.appendChild(totalDiv);
+      }
+
+    </script>
+  </body>
+</html>
