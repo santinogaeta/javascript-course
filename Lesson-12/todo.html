@@ -1,6 +1,8 @@
-
 <!--deleteTodo(event) - event is the action of the button being pressed, which contains lots of information, including the id
                             of the button that was pressed by getting using : event.target.id;-->
+<!--arayy.filter(function (){}) : to go through every entry in an array and filter according to function speciifications-->                            
+<!--Return values-->
+<!--Boolean values + Comparison Operators ( === : equal to, !== : not equal to)-->
 
 <!DOCTYPE html>
 
@@ -52,6 +54,9 @@
         const deleteButton = event.target;
         const idToDelete = deleteButton.id;
 
+        todos.filter(function (todoItem) {
+
+        })
       }
 
       function render() {
